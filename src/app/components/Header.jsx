@@ -1,4 +1,5 @@
 import React from "react";
+import SettingSidebar from "./SettingSidebar";
 
 
 const Header = () => {
@@ -29,6 +30,7 @@ const Header = () => {
           alt="Profile"
           className="size-14 rounded-full cursor-pointer"
         />
+        <SettingSidebar/>
       
       </div>
       </div>

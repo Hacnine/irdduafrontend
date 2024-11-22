@@ -1,22 +1,13 @@
-import '../../app/globals.css';
-import ContentSection from "../../app/components/ContentSection";
-import Sidebar from "../../app/components/Sidebar";
-import Categories from "../../app/components/Categories";
-import Settings from "../../app/components/Setting";
-import '../../index.css'
+import ContentSection from "@/app/components/ContentSection";
+import Layout from "@/app/components/Layout";
 
-export default function Home({ categories = [], sub_categories = [] }) {
+export default function Home({ categories, sub_categories, duas }) {
   return (
-    <div className="flex items-start justify-between gap-5 bg-[#ebeef2] p-5">
-      {/* <Sidebar />  */}
- 
-      <Categories categories={categories} sub_categories={sub_categories} />
-
-     <main className="flex-1 p-4">
-        <ContentSection />
-      </main>
-      {/*  <Settings /> */}
-    </div>
+    <Layout categories={categories} sub_categories={sub_categories}>
+      <div>
+        <ContentSection duas={duas}/>
+      </div>
+    </Layout>
   );
 }
 
@@ -43,7 +34,7 @@ export async function getStaticProps() {
     const data = await res.json();
     const sub_data = await res_sub.json();
     const duas = await res_duas.json();
-    console.log(duas)
+    // console.log(data)
     // Pass categories as props to the component
     return {
       props: {

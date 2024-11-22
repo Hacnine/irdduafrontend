@@ -10,7 +10,7 @@ export default function Sidebar() {
       </div>
 
       {/* Navigation Icons */}
-      <div className="flex flex-col space-y-6 py-13">
+      <div className="flex flex-col space-y-6 py-20">
         {icons.map((icon, index) => (<img key={index} src={icon} alt={`icon-${index}`} />))}
       </div>
 

@@ -1,13 +1,27 @@
-"use client"
-
-import { usePathname, useRouter } from "next/navigation";
+"use client";
+import { useRouter } from "next/router";
 import React, { useState } from "react";
-import { FaSearch } from "react-icons/fa";
 
 // Categories Component
 export default function Categories({ categories = [], sub_categories = [] }) {
   const router = useRouter();
-  const link = usePathname();
+  const { cat } = router.query;
+
+  // State to manage search input
+  const [searchTerm, setSearchTerm] = useState("");
+
+  // Filter categories based on the search term
+  const filteredCategories = categories.filter((category) =>
+    category.cat_name_en.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  const handleClick = (queryParams, cat_id) => {
+    const baseUrl = "/duas";
+    queryParams = queryParams.replace(/\s/g, "-").toLowerCase();
+    const completeUrl = `${baseUrl}/${queryParams}?cat=${cat_id}`;
+    router.push(completeUrl);
+  };
+
   return (
     <div className="bg-white overflow-clip shadow-md w-[350px] mx-auto h-[837px] rounded-[10px]">
       {/* Header */}
@@ -20,33 +34,43 @@ export default function Categories({ categories = [], sub_categories = [] }) {
         <input
           type="text"
           placeholder="Search by Categories"
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)} // Update search term
           className="w-full border border-gray-300 rounded-lg py-2 pl-10 pr-4 focus:ring-2 focus:ring-green-400 focus:outline-none"
         />
-        <FaSearch className="absolute left-5 top-3 text-gray-400 text-lg" />
+        <div className="absolute left-5 top-2">
+          <img className="text-gray-400 text-lg" src="/icon/search.png" />
+        </div>
       </div>
 
       {/* Categories and Subcategories */}
       <div className="overflow-y-auto scrollable-container h-[697px] p-4">
-        {categories.length > 0 ? (
-          categories.map((category) => {
-            // Filter subcategories for the current category
+        {filteredCategories.length > 0 ? (
+          filteredCategories.map((category) => {
+            // Check if the category matches the current query parameter
+            const isSelectedCategory = category.cat_id === parseInt(cat);
+
+            // Filter subcategories for the selected category
             const relatedSubcategories = sub_categories.filter(
               (sub_category) => sub_category.cat_id === category.cat_id
             );
 
             return (
-              <div key={category.id}>
+              <div key={category.cat_id}>
                 {/* Category */}
-                <div className="flex items-center hover:bg-[#e9f0f5] h-[77px] p-[10px] rounded-[10px] shadow-sm mb-6 cursor-pointer"
-                 onClick={() => {
-                  router.replace(category.cat_name_en);
-                }}
+                <div
+                  className={`flex items-center ${
+                    isSelectedCategory ? "bg-[#e9f0f5]" : ""
+                  } hover:bg-[#e9f0f5] h-[77px] p-[10px] rounded-[10px] shadow-sm mb-6 cursor-pointer`}
+                  onClick={() =>
+                    handleClick(category.cat_name_en, category.cat_id)
+                  }
                 >
-                    <img
-                      src="/icon/icon.svg"
-                      alt={category.cat_icon}
-                      className="size-[40px]"
-                    />
+                  <img
+                    src="/icon/icon.svg"
+                    alt={category.cat_icon}
+                    className="size-[40px]"
+                  />
                   <div className="ml-4 flex-1">
                     <h3 className="text-base font-bold text-green-600">
                       {category.cat_name_en}
@@ -63,8 +87,8 @@ export default function Categories({ categories = [], sub_categories = [] }) {
                   </div>
                 </div>
 
-                {/* Subcategories */}
-                {relatedSubcategories.length > 0 ? (
+                {/* Subcategories (Visible only for the selected category) */}
+                {isSelectedCategory && relatedSubcategories.length > 0 ? (
                   <ul className="relative ml-6 pl-4 border-l-2 border-dotted border-green-500">
                     {relatedSubcategories.map((sub_category) => (
                       <li
@@ -72,20 +96,18 @@ export default function Categories({ categories = [], sub_categories = [] }) {
                         className="relative mb-6 pl-4 cursor-pointer text-gray-700"
                       >
                         <div className="absolute -left-[20px] top-2 size-[7px] bg-green-500 rounded-full"></div>
-                        <p className="text-xs leading-5 font-semibold">{sub_category.subcat_name_en}</p>
+                        <p className="text-xs leading-5 font-semibold">
+                          {sub_category.subcat_name_en}
+                        </p>
                       </li>
                     ))}
                   </ul>
-                ) : (
-                  <p className="text-gray-500 text-center text-sm">
-                    No subcategories available.
-                  </p>
-                )}
+                ) : null}
               </div>
             );
           })
         ) : (
-          <p className="text-gray-500 text-center">No categories available.</p>
+          <p className="text-gray-500 text-center">No matching categories found.</p>
         )}
       </div>
     </div>
