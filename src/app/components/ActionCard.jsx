@@ -37,7 +37,7 @@ const ActionCard = ({duaArabic,  transliteration ,translation, refference}) => {
             </div>
             <div className="relative group">
                 <button className="text-gray-500 hover:text-gray-700">
-                    <Image src="/icon/bulb.png" alt="Ideas" width={13} height={13}/>
+                    <Image src="/icon/bulb.png" alt="Ideas" width={24} height={24}/>
                     
                 </button>
                 <span className="absolute w-fit px-2 py-1.5 bottom-10 left-1/2 transform -translate-x-1/2 bg-gray-700 text-white text-center text-xs rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -47,7 +47,7 @@ const ActionCard = ({duaArabic,  transliteration ,translation, refference}) => {
             </div>
             <div className="relative group">
                 <button className="text-gray-500 hover:text-gray-700">
-                    <Image src="/icon/share.png" alt="Share" width={13} height={13}/>
+                    <Image src="/icon/share.png" alt="Share" width={24} height={24}/>
                 </button>
                 <span className="absolute w-fit px-2 py-1.5 bottom-10 left-1/2 transform -translate-x-1/2 bg-gray-700 text-white text-center text-xs rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     Share
@@ -56,7 +56,7 @@ const ActionCard = ({duaArabic,  transliteration ,translation, refference}) => {
             </div>
             <div className="relative group">
                 <button className="text-gray-500 hover:text-gray-700">
-                    <Image src="/icon/report.png" alt="Report" width={13} height={13}/>
+                    <Image src="/icon/report.png" alt="Report" width={24} height={24}/>
                 </button>
                 <span className="absolute w-fit px-2 py-1.5 bottom-10 left-1/2 transform -translate-x-1/2  bg-gray-700 text-white text-center text-xs rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     Report

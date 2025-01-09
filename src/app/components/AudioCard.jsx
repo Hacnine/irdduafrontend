@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import React, { useState, useRef } from "react";
+import { IoMdRepeat } from "react-icons/io";
 
 const AudioCard = ({ audio }) => {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -51,14 +52,14 @@ const AudioCard = ({ audio }) => {
       <button
         onClick={togglePlayPause}
         className={`w-10 h-10 flex items-center justify-center rounded-full ${
-          isPlaying ? "bg-green-500" : "bg-gray-300"
+          isPlaying ? "bg-green-500" : "bg-white"
         }`}
       >
         {isPlaying ? (
           <span className="text-white font-bold">||</span>
         ) : (
           <span className="text-white font-bold">
-            <Image width={13} height={13} src="/icon/play.png" alt="Play" />
+            <Image width={30} height={30} src="/icon/play.png" alt="Play" />
           </span>
         )}
       </button>
@@ -95,7 +96,7 @@ const AudioCard = ({ audio }) => {
           setIsPlaying(true);
         }}
       >
-        <i className="fa fa-repeat"></i>
+        <IoMdRepeat/>
       </button>
 
      </>: null}

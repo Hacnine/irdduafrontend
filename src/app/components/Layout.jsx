@@ -5,7 +5,6 @@ import Header from "./Header";
 import RightSidebar from "./RightSidebar";
 import { IoMenuSharp } from "react-icons/io5";
 import { useRouter } from "next/router";
-import Footer from "./Footer";
 
 const Layout = ({ children, categories, sub_categories }) => {
     const [isOpen, setIsOpen] = React.useState(false);
@@ -15,10 +14,10 @@ const Layout = ({ children, categories, sub_categories }) => {
     const pathName = router.asPath.split('/')[2];
 
     const formattedName = pathName
-        .split('?')[0] // Remove query parameters
-        .split('-') // Split by hyphen
-        .map(word => word.charAt(0).toUpperCase() + word.slice(1)) // Capitalize each word
-        .join(' '); // Join words with space
+        .split('?')[0] 
+        .split('-') 
+        .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(' '); 
 
     useEffect(() => {
         if (pathName) {
