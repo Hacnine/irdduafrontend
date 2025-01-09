@@ -17,7 +17,7 @@ export async function getServerSideProps({ query }) {
   const { cat } = query; // The `cat` value from the query parameter
 
   try {
-    const duasRes = await fetch('http://localhost:3001/duas');
+    const duasRes = await fetch('http://irdduabackend-production.up.railway.app/duas');
 
     if (!duasRes.ok) {
       throw new Error('Failed to fetch duas data');
@@ -27,8 +27,8 @@ export async function getServerSideProps({ query }) {
 
     const filteredDuas = allDuas.filter((dua) => dua.cat_id === parseInt(cat, 10));
 
-    const categoriesRes = await fetch('http://localhost:3001/categories');
-    const subcategoriesRes = await fetch('http://localhost:3001/subcategories');
+    const categoriesRes = await fetch('http://irdduabackend-production.up.railway.app/categories');
+    const subcategoriesRes = await fetch('http://irdduabackend-production.up.railway.app/subcategories');
 
     const categories = await categoriesRes.json();
     const sub_categories = await subcategoriesRes.json();

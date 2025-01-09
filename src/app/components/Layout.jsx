@@ -61,7 +61,7 @@ const Layout = ({ children, categories, sub_categories }) => {
                         </button>
                         {children}
                     </main>
-                    <div className="hidden xl:flex items-start justify-between gap-5 bg-white px-5 h-full width-[322px] rounded-[30px] sticky top-0">
+                    <div className="hidden xl:flex items-start justify-between gap-5 bg-white px-5 h-[837px] width-[322px] rounded-[30px] sticky top-0">
                         <RightSidebar />
                     </div>
                 </div>

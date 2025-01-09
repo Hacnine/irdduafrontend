@@ -10,7 +10,7 @@ const Header = () => {
 
       {/* Search Bar */}
       <div className=" flex items-center justify-center gap-24">
-      <div className="md:flex bg-white w-[352px] h-[48px] border border-gray-300 focus:border-2 ring-transparent outline-none rounded-md items-center space-x-2 p-1  hidden">
+      <div className="md:flex bg-white w-[352px] h-[48px] border border-gray-300 focus:border-2 ring-transparent outline-none rounded-md items-center space-x-2 p-1  hidden lg:mr-36">
         <input
           type="text"
           placeholder="Search by Dua Name"
