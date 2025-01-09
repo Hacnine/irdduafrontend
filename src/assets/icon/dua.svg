@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   version="1.1"
+   id="svg1"
+   width="97"
+   height="96"
+   viewBox="0 0 97 96"
+   sodipodi:docname="dua.svg"
+   inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1">
+    <filter
+       id="filter1_d_1_586"
+       x="8"
+       y="824"
+       width="97"
+       height="96"
+       filterUnits="userSpaceOnUse"
+       color-interpolation-filters="sRGB">
+      <feFlood
+         flood-opacity="0"
+         result="BackgroundImageFix"
+         id="feFlood105" />
+      <feColorMatrix
+         in="SourceAlpha"
+         type="matrix"
+         values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+         result="hardAlpha"
+         id="feColorMatrix107" />
+      <feOffset
+         dy="4"
+         id="feOffset109" />
+      <feGaussianBlur
+         stdDeviation="10"
+         id="feGaussianBlur111" />
+      <feComposite
+         in2="hardAlpha"
+         operator="out"
+         id="feComposite113" />
+      <feColorMatrix
+         type="matrix"
+         values="0 0 0 0 0.121569 0 0 0 0 0.643137 0 0 0 0 0.356863 0 0 0 0.22 0"
+         id="feColorMatrix115" />
+      <feBlend
+         mode="normal"
+         in2="BackgroundImageFix"
+         result="effect1_dropShadow_1_586"
+         id="feBlend117" />
+      <feBlend
+         mode="normal"
+         in="SourceGraphic"
+         in2="effect1_dropShadow_1_586"
+         result="shape"
+         id="feBlend119" />
+    </filter>
+  </defs>
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#cccccc"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="1"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="1.3775"
+     inkscape:cx="170.96189"
+     inkscape:cy="-1.4519056"
+     inkscape:window-width="1366"
+     inkscape:window-height="705"
+     inkscape:window-x="-8"
+     inkscape:window-y="32"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g1" />
+  <g
+     inkscape:groupmode="layer"
+     inkscape:label="Image"
+     id="g1"
+     transform="translate(-215.74682,-201.00181)">
+    <g
+       id="g809"
+       transform="translate(207.74682,-622.99819)">
+      <g
+         filter="url(#filter1_d_1_586)"
+         id="g10">
+        <rect
+           x="28"
+           y="840"
+           width="57"
+           height="56"
+           rx="10"
+           fill="#1fa45b"
+           id="rect8" />
+      </g>
+      <path
+         d="m 64.2577,863.39 c 0.451,-0.465 0.73,-1.108 0.73,-1.818 0,-0.71 -0.279,-1.353 -0.73,-1.818 -0.2281,-0.238 -0.5019,-0.428 -0.805,-0.557 -0.3031,-0.13 -0.6293,-0.197 -0.959,-0.197 0,0 -1.244,-0.003 -2.494,1.286 -1.25,-1.289 -2.494,-1.286 -2.494,-1.286 -0.3295,0 -0.6556,0.067 -0.9587,0.197 -0.3031,0.129 -0.577,0.318 -0.8053,0.556 -0.451,0.466 -0.73,1.108 -0.73,1.818 0,0.71 0.279,1.354 0.73,1.818 l 2.7888,3.02 c 0.7919,0.857 2.1467,0.858 2.9386,0 z"
+         fill="#ffffff"
+         id="path12" />
+      <path
+         fill-rule="evenodd"
+         clip-rule="evenodd"
+         d="m 64.226,869.02 -3.1782,2.542 C 60.6932,871.846 60.2526,872 59.7986,872 H 56 c -0.2761,0 -0.5,-0.224 -0.5,-0.5 0,-0.276 0.2239,-0.5 0.5,-0.5 h 3.565 c 0.0904,0 0.1792,-0.025 0.2568,-0.071 0.0775,-0.047 0.1411,-0.113 0.1837,-0.193 0.0427,-0.08 0.063,-0.17 0.0587,-0.26 -0.0044,-0.09 -0.0331,-0.178 -0.0832,-0.253 l -0.888,-1.332 c -0.1822,-0.274 -0.4294,-0.499 -0.7195,-0.655 C 58.0833,868.081 57.7592,868 57.43,868 H 52 c -0.2652,0 -0.5196,0.105 -0.7071,0.293 -0.0262,0.026 -0.0654,0.068 -0.1162,0.123 -0.313,0.339 -1.0663,1.154 -1.9267,1.584 H 46.5 v 5 h 2.25 c 1.25,0 2.3749,0.125 2.75,0.5 0.3751,0.375 0.9696,0.5 1.5,0.5 h 7.139 c 0.4276,0 0.8503,-0.091 1.2397,-0.268 0.3895,-0.176 0.7366,-0.434 1.0183,-0.756 l 5.0094,-4.905 c 0.4996,-0.489 0.305,-1.334 -0.3584,-1.555 -0.475,-0.158 -0.9822,-0.195 -1.4751,-0.107 -0.493,0.088 -0.956,0.298 -1.3469,0.611 z"
+         fill="#ffffff"
+         id="path14" />
+    </g>
+  </g>
+</svg>

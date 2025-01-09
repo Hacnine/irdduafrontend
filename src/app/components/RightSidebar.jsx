@@ -1,17 +1,19 @@
 import Image from 'next/image'
 import React from 'react'
-
+import lanIcon from '../../assets/icon/lan.png';
+// import genIcon from 'assets/icon/gen.png';
+// import fontIcon from 'assets/icon/font.png';
+// import menuIcon from 'assets/icon/menu.png';
 const RightSidebar = () => {
     return (
-
         <div className="p-4 text-sm h-full ">
             <h2 className="text-xl h-[87px] text-center flex items-center justify-center font-bold mb-4">Settings</h2>
             <div className="mb-4 bg-[#f7f8fa] flex items-center justify-start gap-3 p-3 rounded-md">
-                <Image src="/icon/lan.png" className='bg-green-100 rounded-full p-2' alt="" width={38} height={38}/>
+                <Image src={lanIcon} className='bg-green-100 rounded-full p-2' alt="" width={38} height={38}/>
                 <h3 className=" text-gray-500">Language Settings</h3>
             </div>
             <div className="mb-4 flex items-center justify-start gap-3 p-3 rounded-md bg-[#f7f8fa]">
-                <Image src="/icon/gen.png" className='bg-green-100 rounded-full p-2' alt="" width={38} height={38}/>
+                <Image src="/icon/gen.svg" className='bg-green-100 rounded-full p-2' alt="" width={38} height={38}/>
                 <h3 className=" text-gray-500">General Settings</h3>
             </div>
             <div className="mb-4 flex items-center justify-start gap-3 p-3 rounded-md bg-[#f7f8fa]">
