@@ -10,8 +10,8 @@ const ContentSection = ({ duas = [], filteredSubCategories = [] }) => {
 
             {filteredSubCategories.map((category, index) => (
                 <>
-                    <section className="mb-4 bg-white rounded-lg p-3 " key={index}>
-                        <h3 className="text-base text-gray-600 font-semibold"> <span className="text-green-600">Section:</span> {category.subcat_name_en}</h3>
+                    <section className="my-4 bg-white rounded-lg p-3 " key={index}>
+                        <h3 className="text-base text-gray-600 font-semibold "> <span className="text-green-600">Section:</span> {category.subcat_name_en}</h3>
                     </section>
 
                     <div className=' space-y-4'>

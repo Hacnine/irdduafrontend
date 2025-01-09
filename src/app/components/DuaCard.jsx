@@ -28,7 +28,7 @@ const DuaCard = ({ cat, top, duaName, duaArabic, transliteration, translation, r
                 </p>
             </section>
         
-            <div className={` flex ${audio ? ' items-center justify-between' : 'items-center justify-end'}`}>
+            <div className={` flex  ${audio ? ' items-center justify-between' : 'items-center justify-end'}`}>
                 {audio ? <AudioCard audio={audio} /> : null}
                 <ActionCard top={top} duaArabic={duaArabic}  transliteration={transliteration}translation={translation} refference={refference}/>
             </div>

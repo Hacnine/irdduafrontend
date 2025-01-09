@@ -1,6 +1,7 @@
 import React from "react";
 import SettingSidebar from "./SettingSidebar";
 import Image from "next/image";
+import { HiSearch } from "react-icons/hi";
 
 
 const Header = () => {
@@ -18,7 +19,7 @@ const Header = () => {
           className="px-3 w-full py-2  rounded-md focus:outline-none focus: focus:ring-tranparent"
         />
         <div className=" rounded flex items-center justify-center bg-[#f2f3f5]  w-[54px] h-[40px]">
-        <Image src="/icon/search.png" alt="" width={24} height={24} />
+        <HiSearch className="text-xl text-gray-400" />
         </div>
         
 

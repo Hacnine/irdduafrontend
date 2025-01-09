@@ -33,7 +33,6 @@ const Layout = ({ children, categories, sub_categories }) => {
 
             {/* Content Area */}
             <div className="flex-1 flex flex-col h-full">
-                {/* <Header /> */}
                 <Header />
                 <div className="flex items-start justify-between gap-5 bg-[#ebeef2] px-5 h-full">
                     {isOpen && (

@@ -1,27 +1,28 @@
 import Image from 'next/image'
 import React from 'react'
-import lanIcon from '../../assets/icon/lan.png';
-// import genIcon from 'assets/icon/gen.png';
-// import fontIcon from 'assets/icon/font.png';
-// import menuIcon from 'assets/icon/menu.png';
+import { HiLanguage } from "react-icons/hi2";
+import { HiOutlineInboxStack } from "react-icons/hi2";
+;import { AiOutlineFontSize } from "react-icons/ai";
+import { HiOutlineViewGrid } from "react-icons/hi";
+
 const RightSidebar = () => {
     return (
-        <div className="p-4 text-sm h-full ">
+        <div className="px-4 text-sm h-full ">
             <h2 className="text-xl h-[87px] text-center flex items-center justify-center font-bold mb-4">Settings</h2>
             <div className="mb-4 bg-[#f7f8fa] flex items-center justify-start gap-3 p-3 rounded-md">
-                <Image src={lanIcon} className='bg-green-100 rounded-full p-2' alt="" width={38} height={38}/>
+                <HiLanguage className='bg-green-100 rounded-full p-2 size-10 text-gray-400' alt="" />
                 <h3 className=" text-gray-500">Language Settings</h3>
             </div>
             <div className="mb-4 flex items-center justify-start gap-3 p-3 rounded-md bg-[#f7f8fa]">
-                <Image src="/icon/gen.svg" className='bg-green-100 rounded-full p-2' alt="" width={38} height={38}/>
+                <HiOutlineInboxStack className='bg-green-100 rounded-full p-2 size-10 text-gray-400' alt="" />
                 <h3 className=" text-gray-500">General Settings</h3>
             </div>
             <div className="mb-4 flex items-center justify-start gap-3 p-3 rounded-md bg-[#f7f8fa]">
-                <Image src="/icon/font.png" className='bg-green-100 rounded-full p-2' alt="" width={38} height={38}/>
+            <AiOutlineFontSize className='bg-green-100 rounded-full p-2 size-10 text-gray-400' alt="" />
                 <h3 className=" text-gray-500">Font Settings</h3>
             </div>
             <div className="mb-4 flex items-center justify-start gap-3 p-3 rounded-md bg-[#f7f8fa]">
-                <Image src="/icon/menu.png" className='bg-green-100 rounded-full p-2' alt="" width={38} height={38}/>
+            <HiOutlineViewGrid className='bg-green-100 rounded-full p-2 size-10 text-gray-400' alt="" />
                 <h3 className=" text-green-600">Appearance Settings</h3>
             </div>
 

@@ -48,7 +48,7 @@ const AudioCard = ({ audio }) => {
   };
 
   return (
-    <div className="flex items-center justify-between p-4 bg-white rounded-lg w-80 ">
+    <div className="flex items-center justify-between p-4 bg-white rounded-lg  ">
       <button
         onClick={togglePlayPause}
         className={`w-10 h-10 flex items-center justify-center rounded-full ${

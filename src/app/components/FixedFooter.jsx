@@ -1,6 +1,10 @@
 import React from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
+import { HiOutlineHome } from "react-icons/hi2";
+import { HiOutlineViewGrid } from "react-icons/hi";
+import { PiLightbulbFilament } from "react-icons/pi";
+import { HiOutlineBookmark } from "react-icons/hi2";
+import { RiMedicineBottleLine } from "react-icons/ri";
 
 const FixedFooter = () => {
   return (
@@ -8,27 +12,27 @@ const FixedFooter = () => {
       <div className="px-6 pt-6 flex justify-between">
         <Link href="/">
           <div className="w-10 h-10 bg-dua-bg flex items-center justify-center rounded-full cursor-pointer dark:bg-dark-bg-dark">
-            <Image src="/icon/home.svg" alt="Home" width={34} height={34} />
+            <HiOutlineHome className=' rounded-full p-2 size-10 text-gray-400' alt="" />
           </div>
         </Link>
         <Link href="/alldua">
           <div className="w-10 h-10 bg-dua-bg flex items-center justify-center rounded-full cursor-pointer dark:bg-dark-bg-dark">
-            <Image src="/icon/AllDuas.svg" alt="All Dua" width={34} height={34} />
+          <HiOutlineViewGrid className=' rounded-full p-2 size-10 text-gray-400' alt="" />
           </div>
         </Link>
         <Link href="/memorize">
           <div className="w-10 h-10 bg-dua-bg flex items-center justify-center rounded-full cursor-pointer dark:bg-dark-bg-dark">
-            <Image src="/icon/memorize.svg" alt="Memorize" width={34} height={34} />
+          <PiLightbulbFilament className=' rounded-full p-2 size-10 text-gray-400' alt="" />
           </div>
         </Link>
         <Link href="/bookmark">
           <div className="w-10 h-10 bg-dua-bg flex items-center justify-center rounded-full cursor-pointer dark:bg-dark-bg-dark">
-            <Image src="/icon/bookmark.svg" alt="Bookmark" width={34} height={34} />
+          <HiOutlineBookmark className=' rounded-full p-2 size-10 text-gray-400' alt="" />
           </div>
         </Link>
         <Link href="/ruqyah">
           <div className="w-10 h-10 bg-dua-bg flex items-center justify-center rounded-full cursor-pointer dark:bg-dark-bg-dark">
-            <Image src="/icon/ruqyah.svg" alt="Ruqyah" width={34} height={34} />
+          <RiMedicineBottleLine className=' rounded-full p-2 size-10 text-gray-400' alt="" />
           </div>
         </Link>
       </div>
