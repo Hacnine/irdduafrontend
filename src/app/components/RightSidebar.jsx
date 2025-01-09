@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import React from 'react'
 
 const RightSidebar = () => {
@@ -6,19 +7,19 @@ const RightSidebar = () => {
         <div className="p-4 text-sm h-full ">
             <h2 className="text-xl h-[87px] text-center flex items-center justify-center font-bold mb-4">Settings</h2>
             <div className="mb-4 bg-[#f7f8fa] flex items-center justify-start gap-3 p-3 rounded-md">
-                <img src="/icon/lan.png" className='bg-green-100 rounded-full p-2' alt="" />
+                <Image src="/icon/lan.png" className='bg-green-100 rounded-full p-2' alt="" width={30} height={30}/>
                 <h3 className=" text-gray-500">Language Settings</h3>
             </div>
             <div className="mb-4 flex items-center justify-start gap-3 p-3 rounded-md bg-[#f7f8fa]">
-                <img src="/icon/gen.png" className='bg-green-100 rounded-full p-2' alt="" />
+                <Image src="/icon/gen.png" className='bg-green-100 rounded-full p-2' alt="" width={30} height={30}/>
                 <h3 className=" text-gray-500">General Settings</h3>
             </div>
             <div className="mb-4 flex items-center justify-start gap-3 p-3 rounded-md bg-[#f7f8fa]">
-                <img src="/icon/font.png" className='bg-green-100 rounded-full p-2' alt="" />
+                <Image src="/icon/font.png" className='bg-green-100 rounded-full p-2' alt="" width={30} height={30}/>
                 <h3 className=" text-gray-500">Font Settings</h3>
             </div>
             <div className="mb-4 flex items-center justify-start gap-3 p-3 rounded-md bg-[#f7f8fa]">
-                <img src="/icon/menu.png" className='bg-green-100 rounded-full p-2' alt="" />
+                <Image src="/icon/menu.png" className='bg-green-100 rounded-full p-2' alt="" width={30} height={30}/>
                 <h3 className=" text-green-600">Appearance Settings</h3>
             </div>
 

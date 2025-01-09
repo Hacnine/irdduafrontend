@@ -1,37 +1,39 @@
 import React from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
 
-const BottomNav = () => {
+const FixedFooter = () => {
   return (
-    <div className="lg:hidden block fixed bottom-0 z-0 w-full bg-white pb-6 mt-6 rounded-t-[3rem] shadow-top dark:bg-dark-bg  shadow-lg shadow-black">
+    <footer className="fixed bottom-0 w-full bg-white pb-6 mt-6 rounded-t-[3rem] shadow-top dark:bg-dark-bg hidden md:block lg:block">
       <div className="px-6 pt-6 flex justify-between">
-        <a href="/">
+        <Link href="/">
           <div className="w-10 h-10 bg-dua-bg flex items-center justify-center rounded-full cursor-pointer dark:bg-dark-bg-dark">
-            <img src="/icon/home.svg" alt="Home" />
+            <Image src="/assets/nav/home.svg" alt="Home" width={24} height={24} />
           </div>
-        </a>
-        <a href="/alldua">
+        </Link>
+        <Link href="/alldua">
           <div className="w-10 h-10 bg-dua-bg flex items-center justify-center rounded-full cursor-pointer dark:bg-dark-bg-dark">
-            <img src="/icon/AllDuas.svg" alt="All Dua" />
+            <Image src="/assets/nav/alldua.svg" alt="All Dua" width={24} height={24} />
           </div>
-        </a>
-        <a href="/memorize">
+        </Link>
+        <Link href="/memorize">
           <div className="w-10 h-10 bg-dua-bg flex items-center justify-center rounded-full cursor-pointer dark:bg-dark-bg-dark">
-            <img src="/icon/memorize.svg" alt="Memorize" />
+            <Image src="/assets/nav/memorize.svg" alt="Memorize" width={24} height={24} />
           </div>
-        </a>
-        <a href="/bookmark">
+        </Link>
+        <Link href="/bookmark">
           <div className="w-10 h-10 bg-dua-bg flex items-center justify-center rounded-full cursor-pointer dark:bg-dark-bg-dark">
-            <img src="/icon/bookmark.svg" alt="Bookmark" />
+            <Image src="/assets/nav/bookmark.svg" alt="Bookmark" width={24} height={24} />
           </div>
-        </a>
-        <a href="/ruqyah">
+        </Link>
+        <Link href="/ruqyah">
           <div className="w-10 h-10 bg-dua-bg flex items-center justify-center rounded-full cursor-pointer dark:bg-dark-bg-dark">
-            <img src="/icon/ruqyah.svg" alt="Ruqyah" />
+            <Image src="/assets/nav/ruqyah.svg" alt="Ruqyah" width={24} height={24} />
           </div>
-        </a>
+        </Link>
       </div>
-    </div>
+    </footer>
   );
 };
 
-export default BottomNav;
+export default FixedFooter;

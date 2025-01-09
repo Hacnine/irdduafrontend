@@ -1,5 +1,6 @@
 import React from "react";
 import SettingSidebar from "./SettingSidebar";
+import Image from "next/image";
 
 
 const Header = () => {
@@ -17,7 +18,7 @@ const Header = () => {
           className="px-3 w-full py-2  rounded-md focus:outline-none focus: focus:ring-tranparent"
         />
         <div className=" rounded flex items-center justify-center bg-[#f2f3f5]  w-[54px] h-[40px]">
-        <img src="/icon/search.png" alt="" />
+        <Image src="/icon/search.png" alt="" width={24} height={24} />
         </div>
         
 
@@ -25,10 +26,11 @@ const Header = () => {
 
       {/* Profile and Settings */}
       <div className="relative flex items-center space-x-4">
-        <img
+        <Image
           src="/icon/profile.svg"
           alt="Profile"
           className="size-14 rounded-full cursor-pointer"
+          width={24} height={24}
         />
         <SettingSidebar/>
       

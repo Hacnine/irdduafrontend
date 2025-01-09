@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import { useRouter } from "next/router";
 import React, { useState } from "react";
 
@@ -45,7 +46,7 @@ export default function Categories({ categories = [], sub_categories = [] }) {
           className="w-full border border-gray-300 rounded-lg py-2 pl-10 pr-4 focus:ring-2 focus:ring-green-400 focus:outline-none"
         />
         <div className="absolute left-5 top-2">
-          <img className="text-gray-400 text-lg" src="/icon/search.png" />
+          <Image className="text-gray-400 text-lg" src="/icon/search.png" width={13} height={13}/>
         </div>
       </div>
 
@@ -72,10 +73,11 @@ export default function Categories({ categories = [], sub_categories = [] }) {
                     handleClick(category.cat_name_en, category.cat_id)
                   }
                 >
-                  <img
+                  <Image
                     src="/icon/icon.svg"
                     alt={category.cat_icon}
                     className="size-[40px]"
+                    width={13} height={13}
                   />
                   <div className="ml-4 flex-1">
                     <h3 className="text-base font-bold text-green-600">

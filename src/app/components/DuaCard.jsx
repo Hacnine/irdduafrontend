@@ -1,14 +1,14 @@
 import React from 'react'
 import AudioCard from './AudioCard'
 import ActionCard from './ActionCard'
-
+import Image from 'next/image'
 const DuaCard = ({ cat, top, duaName, duaArabic, transliteration, translation, refference, audio }) => {
     return (
         <>
 
             <section className="mb-8 text-green-600">
                 <div className=" flex items-center h-[35px] gap-3">
-                    <img src="/icon/ayah.png" alt="" />
+                    <Image src="/icon/ayah.png" alt="" width={13} height={13}/>
                     <h2 className="text-base font-semibold mb-2"><span>{cat}.</span> {duaName}</h2>
                 </div>
                 <p className="text-gray-700 mb-4 text-base ">

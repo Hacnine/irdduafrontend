@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image";
 import React, { useState, useRef } from "react";
 
 const AudioCard = ({ audio }) => {
@@ -57,7 +58,7 @@ const AudioCard = ({ audio }) => {
           <span className="text-white font-bold">||</span>
         ) : (
           <span className="text-white font-bold">
-            <img src="/icon/play.png" alt="Play" />
+            <Image width={13} height={13} src="/icon/play.png" alt="Play" />
           </span>
         )}
       </button>
