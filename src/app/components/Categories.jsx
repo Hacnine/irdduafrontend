@@ -22,6 +22,12 @@ export default function Categories({ categories = [], sub_categories = [] }) {
     router.push(completeUrl);
   };
 
+  const handleSubCategoryClick = (subcat_id) => {
+    const baseUrl = window.location.href.split('&subcat=')[0];
+    const completeUrl = `${baseUrl}&subcat=${subcat_id}`;
+    router.push(completeUrl);
+  }
+
   return (
     <div className="bg-white overflow-clip shadow-md w-[350px] mx-auto h-[837px] rounded-[10px]">
       {/* Header */}
@@ -94,6 +100,7 @@ export default function Categories({ categories = [], sub_categories = [] }) {
                       <li
                         key={sub_category.id}
                         className="relative mb-6 pl-4 cursor-pointer text-gray-700"
+                        onClick={() =>(handleSubCategoryClick(sub_category.subcat_id))}
                       >
                         <div className="absolute -left-[20px] top-2 size-[7px] bg-green-500 rounded-full"></div>
                         <p className="text-xs leading-5 font-semibold">

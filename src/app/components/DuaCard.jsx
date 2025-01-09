@@ -27,10 +27,10 @@ const DuaCard = ({ cat, top, duaName, duaArabic, transliteration, translation, r
                     <strong>Reference:</strong> {refference}
                 </p>
             </section>
-
+        
             <div className={` flex ${audio ? ' items-center justify-between' : 'items-center justify-end'}`}>
                 {audio ? <AudioCard audio={audio} /> : null}
-                <ActionCard />
+                <ActionCard top={top} duaArabic={duaArabic}  transliteration={transliteration}translation={translation} refference={refference}/>
             </div>
         </>
     )

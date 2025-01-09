@@ -1,5 +1,4 @@
 import React from 'react';
-import { IoMenuSharp } from "react-icons/io5";
 
 import DuaCard from './DuaCard';
 const ContentSection = ({ duas = [], filteredSubCategories = [] }) => {
@@ -7,13 +6,11 @@ const ContentSection = ({ duas = [], filteredSubCategories = [] }) => {
     // console.log(filteredSubCategories)
     return (
         <>
-            <button className="mb-4 md:hidden block bg-white rounded-lg p-3  w-full">
-                <h3 className="text-base text-gray-600 font-semibold flex items-center gap-2"> <span className=""><IoMenuSharp className=' text-2xl' /></span> Dua's Important</h3>
-            </button>
+            
 
             {filteredSubCategories.map((category, index) => (
                 <>
-                    <section className="my-4 bg-white rounded-lg p-3 " key={index}>
+                    <section className="mb-4 bg-white rounded-lg p-3 " key={index}>
                         <h3 className="text-base text-gray-600 font-semibold"> <span className="text-green-600">Section:</span> {category.subcat_name_en}</h3>
                     </section>
 

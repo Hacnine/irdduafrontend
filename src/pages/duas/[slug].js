@@ -1,10 +1,7 @@
-
 import ContentSection from "@/app/components/ContentSection"; // Assuming you have this component
 import Layout from "@/app/components/Layout"; // Sidebar layout component
 
 export default function DuaPage({ duas, categories, sub_categories, filteredSubCategories }) {
-
-
   return (
     <Layout categories={categories} sub_categories={sub_categories}>
       <div>
@@ -35,9 +32,7 @@ export async function getServerSideProps({ query }) {
 
     const categories = await categoriesRes.json();
     const sub_categories = await subcategoriesRes.json();
-
-    const filteredSubCategories = sub_categories.filter((category)=> category.cat_id === parseInt(cat, 10));
-    console.log(filteredSubCategories)
+    const filteredSubCategories = sub_categories.filter((category) => category.cat_id === parseInt(cat, 10));
 
     return {
       props: {
