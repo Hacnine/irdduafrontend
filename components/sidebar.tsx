@@ -42,13 +42,13 @@ export default function Sidebar({ categories, currentCategory, isOpen, onClose }
     <>
       {isOpen && <div className="fixed inset-0 bg-black bg-opacity-50 z-40 lg:hidden" onClick={onClose} />}
 
-      <aside
-        className={`
-        fixed lg:static inset-y-0 left-16 z-50 w-80 bg-white border-r border-gray-200 
-        transform transition-transform duration-300 ease-in-out
-        ${isOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"}
-        flex flex-col h-screen lg:h-[calc(100vh-73px)] lg:top-[73px]
-      `}
+     <aside
+  className={`
+    fixed lg:static inset-y-0 left-0 z-50 w-80 bg-white border-r border-gray-200 
+    transform transition-transform duration-300 ease-in-out
+    ${isOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"}
+    flex flex-col h-screen lg:h-[calc(100vh-73px)] lg:top-[73px]
+  `}
       >
         <div className="p-4 border-b border-gray-100">
           <div className="relative">

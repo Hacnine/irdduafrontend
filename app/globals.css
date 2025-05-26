@@ -18,6 +18,18 @@
     font-weight: 400;
   }
 }
+@layer base {
+  /* .color-scheme {
+    --desaturated-green: #417360;
+  } */
+
+  :root {
+     --desaturated-green: #417360;
+     --light-gray:#ebf3eb;
+     --left-sidebar:#eef6eb;
+    /* --background: 0 0% 100%; */
+  }
+}
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {
