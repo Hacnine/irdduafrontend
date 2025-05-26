@@ -16,9 +16,9 @@ export default function MainContent({ duas, currentCategory, arabicFontSize, tra
   const sectionTitle = duas[0]?.sectionTitle || "The servant is dependent on his Lord"
 
   return (
-   <main className="flex-1 h-full max-h-screen overflow-y-auto w-full mx-auto py-6 px-[100px] bg-white">
+   <main className="flex-1 h-full max-h-screen overflow-y-auto w-full mx-auto   bg-white">
 
-      <nav className="flex items-center gap-2 text-sm text-gray-500 mb-6">
+      <nav className="flex items-center gap-2 text-sm h-[46px] px-[100px] bg-[#e1ebe1] text-gray-500 mb-6">
         <span>Home</span>
         <ChevronRight className="h-4 w-4" />
         <span>{categoryName}</span>
@@ -26,13 +26,13 @@ export default function MainContent({ duas, currentCategory, arabicFontSize, tra
         <span className="text-gray-900">The servant is dependent...</span>
       </nav>
 
-      <div className="mb-8">
+      <div className="mb-8 px-[100px]">
         <h1 className="text-xl font-semibold text-gray-900 mb-2">
           <span className="text-green-600">Section:</span> {sectionTitle}
         </h1>
       </div>
 
-      <div className="space-y-8 flex-1 overflow-y-auto">
+      <div className="space-y-8 flex-1 overflow-y-auto px-[100px]">
         {duas.map((dua, index) => (
           <div key={dua.id} className="bg-white rounded-lg border border-gray-200 p-6">
             <div className="flex items-start gap-3 mb-6">

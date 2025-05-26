@@ -48,3 +48,16 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #a8a8a8;
 }
+/* Optional: only scope it to specific Sliders if needed */
+.group[data-slider] .radix-slider-track {
+  height: 3px !important;
+  background-color: var(--desaturated-green); /* Replace with your actual color */
+  border-radius: 6px;
+}
+
+.group[data-slider] .radix-slider-range {
+  height: 3px !important;
+  background-color: var(--desaturated-green); /* Replace with your actual color */
+
+  border-radius: 6px;
+}
