@@ -91,10 +91,13 @@ export default function Sidebar({
                 className="space-y-2 cursor-pointer"
                 onClick={() => {
                   toggleCategory(category.cat_id);
-                  const formattedName = category.cat_name_en
-                    .toLowerCase()
-                    .replace(/\s+/g, "-")
-                    .replace(/['"]/g, "");
+                const formattedName = category.cat_name_en
+  .toLowerCase()
+  .replace(/\s+/g, "-") // Replace spaces with "-"
+  .replace(/[&'"!@#$%^*()+=,<>?/\\{}[\]~`]/g, "-") // Replace special characters with "-"
+  .replace(/-+/g, "-"); // Remove duplicate hyphens
+
+console.log(formattedName);
 
                   router.replace(`/dua-categories/${formattedName}`, {
                     scroll: false,
