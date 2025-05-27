@@ -11,9 +11,17 @@
   }
 }
 
+@font-face {
+  font-family: "MyArabicFont";
+  src: url("/fonts/arabic.otf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 @layer utilities {
   .font-arabic {
-    font-family: "Arabic Typesetting", "Traditional Arabic", "Geeza Pro", "Baghdad", "Helvetica Neue", sans-serif;
+    font-family: "MyArabicFont", "Arabic Typesetting", "Traditional Arabic", "Geeza Pro", "Baghdad", "Helvetica Neue", sans-serif;
     line-height: 2;
     font-weight: 400;
   }
@@ -27,6 +35,7 @@
      --desaturated-green: #417360;
      --light-gray:#ebf3eb;
      --left-sidebar:#eef6eb;
+     --transliteration-text:#7C827D;
     /* --background: 0 0% 100%; */
   }
 }
@@ -48,16 +57,4 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #a8a8a8;
 }
-/* Optional: only scope it to specific Sliders if needed */
-.group[data-slider] .radix-slider-track {
-  height: 3px !important;
-  background-color: var(--desaturated-green); /* Replace with your actual color */
-  border-radius: 6px;
-}
 
-.group[data-slider] .radix-slider-range {
-  height: 3px !important;
-  background-color: var(--desaturated-green); /* Replace with your actual color */
-
-  border-radius: 6px;
-}

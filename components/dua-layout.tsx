@@ -22,7 +22,7 @@ export default function DuaLayout({
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [fontSettingsOpen, setFontSettingsOpen] = useState(false);
   const [arabicFontSize, setArabicFontSize] = useState(28);
-  const [translationFontSize, setTranslationFontSize] = useState(28);
+  const [translationFontSize, setTranslationFontSize] = useState(16);
 
   return (
     <div className="min-h-screen flex bg-gray-50">

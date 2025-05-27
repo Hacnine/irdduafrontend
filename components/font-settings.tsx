@@ -49,7 +49,7 @@ export default function FontSettings({
         <div className="p-4">
           <Accordion type="multiple" className="">
             {/* Font Size */}
-            <AccordionItem value="font-size" className=" border-none h-14">
+            <AccordionItem value="font-size" className=" border-none ">
               <AccordionTrigger className="hover:no-underline no-underline">
                 <div className="flex  items-center gap-3">
                   <div className="size-[34px] flex items-center justify-center rounded-full bg-[#d8e7d3]">
@@ -118,7 +118,7 @@ export default function FontSettings({
             {/* Script */}
 
             {/* View Settings */}
-            <AccordionItem value="view-settings" className=" border-none h-14">
+            <AccordionItem value="view-settings" className=" border-none ">
               <AccordionTrigger className="hover:no-underline no-underline  border-none">
                 <div className="flex  items-center gap-3">
                   <div className="size-[34px] flex items-center justify-center rounded-full bg-[#d8e7d3]">
@@ -148,7 +148,7 @@ export default function FontSettings({
             {/* Appearance */}
             <AccordionItem
               value="appearance-settings"
-              className=" border-none h-14"
+              className=" border-none "
             >
               <AccordionTrigger className="hover:no-underline no-underline  border-none">
                 <div className="flex  items-center gap-3">
