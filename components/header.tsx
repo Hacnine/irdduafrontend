@@ -81,7 +81,7 @@ export default function Header({
           </div>
 
           {/* Support Button */}
-          <Button className="h-[38px] bg-[var(--desaturated-green)] hover:bg-green-700 text-white px-4 rounded-[30px] flex items-center gap-2 text-[14px] w-[133px]">
+          <Button className="h-[38px] md:flex hidden bg-[var(--desaturated-green)] hover:bg-green-700 text-white px-4 rounded-[30px]  items-center gap-2 text-[14px] w-[133px]">
             <span>Support Us</span>
             <div className="size-[18px]">
               <Image
