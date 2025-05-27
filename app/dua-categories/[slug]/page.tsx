@@ -1,7 +1,7 @@
 import CategoryPage from "@/components/CategoryPage"
 
 export async function generateStaticParams() {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/categories`)
+  const res = await fetch(`https://irdduabackend.onrender.com/categories`)
   const categories = await res.json()
 
   return categories.map((cat: any) => ({
