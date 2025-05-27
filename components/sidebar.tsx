@@ -1,14 +1,15 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Search, ChevronDown, ChevronRight } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import type { Category } from "@/types";
 import Link from "next/link";
-import Image from "next/image"; // ✅ Needed to render SVG icons
+import Image from "next/image";
 import { useGetSubCategoriesByCategoryIdQuery } from "@/redux/services/duaApi";
 import { useRouter } from "next/navigation";
+
 interface SidebarProps {
   categories: Category[];
   currentCategory: string;
@@ -22,12 +23,20 @@ export default function Sidebar({
   isOpen,
   onClose,
 }: SidebarProps) {
-  // console.log(categories)
   const router = useRouter();
   const [searchQuery, setSearchQuery] = useState("");
 
+  // Initialize expanded/active category from currentCategory
   const [expandedCategories, setExpandedCategories] = useState<number[]>([]);
   const [activeCategoryId, setActiveCategoryId] = useState<number | null>(null);
+
+  useEffect(() => {
+    if (currentCategory) {
+      const catId = Number(currentCategory);
+      setExpandedCategories([catId]);
+      setActiveCategoryId(catId);
+    }
+  }, [currentCategory]);
 
   const toggleCategory = (catId: number) => {
     setExpandedCategories((prev) =>
@@ -42,12 +51,13 @@ export default function Sidebar({
     useGetSubCategoriesByCategoryIdQuery(activeCategoryId!, {
       skip: activeCategoryId === null,
     });
+
   const filteredCategories = categories?.filter(
     (category) =>
       category?.cat_name_bn?.includes(searchQuery) ||
       category?.cat_name_en?.toLowerCase().includes(searchQuery.toLowerCase())
   );
-  console.log(filteredCategories);
+
   const categoryIcons = [
     "/category/duas.svg",
     "/category/Adhan.svg",
@@ -91,13 +101,12 @@ export default function Sidebar({
                 className="space-y-2 cursor-pointer"
                 onClick={() => {
                   toggleCategory(category.cat_id);
-                const formattedName = category.cat_name_en
-  .toLowerCase()
-  .replace(/\s+/g, "-") // Replace spaces with "-"
-  .replace(/[&'"!@#$%^*()+=,<>?/\\{}[\]~`]/g, "-") // Replace special characters with "-"
-  .replace(/-+/g, "-"); // Remove duplicate hyphens
-
-console.log(formattedName);
+                  const formattedName = category.cat_name_en
+                    .toLowerCase()
+                    .replace(/\s+/g, "-")
+                    .replace(/['"]/g, "")
+                    .replace(/[&!@#$%^*()+=,<>?/\\{}[\]~`]/g, "-")
+                    .replace(/-+/g, "-");
 
                   router.replace(`/dua-categories/${formattedName}`, {
                     scroll: false,

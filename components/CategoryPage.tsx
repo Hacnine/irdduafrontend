@@ -38,7 +38,6 @@ export default function CategoryPage() {
   }, [loadingCategories, selectedCategory])
 
   if (loadingCategories || loadingDuas) return <div>Loading...</div>
-
   return (
     <DuaLayout
       categories={categories}
