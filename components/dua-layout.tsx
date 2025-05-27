@@ -5,12 +5,12 @@ import Header from "./header";
 import Sidebar from "./sidebar";
 import MainContent from "./main-content";
 import FontSettings from "./font-settings";
-import type { DuaCategory, Dua } from "@/types";
+import type { Category, Duas } from "@/types";
 import LeftNavigation from "./left-navigation";
 
 interface DuaLayoutProps {
-  categories: DuaCategory[];
-  duas: Dua[];
+  categories: Category[];
+  duas: Duas[];
   currentCategory: string;
 }
 

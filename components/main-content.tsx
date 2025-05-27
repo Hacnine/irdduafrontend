@@ -1,51 +1,83 @@
-"use client"
+"use client";
 
-import { ChevronRight, Bookmark, Share, Copy, MoreHorizontal } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import type { Dua } from "@/types"
-import Image from "next/image"
+import {
+  ChevronRight,
+  Bookmark,
+  Share,
+  Copy,
+  MoreHorizontal,
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
+import type { Duas } from "@/types";
+import Image from "next/image";
+import { useGetDuasByCategoryIdQuery, useGetSubCategoriesQuery } from "@/redux/services/duaApi";
 
 interface MainContentProps {
-  duas: Dua[]
-  currentCategory: string
-  arabicFontSize: number
-  translationFontSize: number
+  duas: Duas[];
+  currentCategory: string;
+  arabicFontSize: number;
+  translationFontSize: number;
 }
 
-export default function MainContent({ duas, currentCategory, arabicFontSize, translationFontSize }: MainContentProps) {
-  const categoryName = duas[0]?.categoryName || "Dua Category"
-  const sectionTitle = duas[0]?.sectionTitle || "The servant is dependent on his Lord"
+export default function MainContent({
+duas,
+  currentCategory,
+  arabicFontSize,
+  translationFontSize,
+}: MainContentProps) {
+  const { data: subCategoriesData = [], isFetching: categoryDataFetching } =
+    useGetSubCategoriesQuery();
+  console.log(duas);
+
+  const categoryName = 
+  duas[0]?.dua_name_en || 
+  duas[0]?.dua_name_bn;
+  const sectionTitle =
+    subCategoriesData[0]?.subcat_name_en ||
+    subCategoriesData[0]?.subcat_name_bn;
 
   return (
-   <main className="flex-1 h-full max-h-screen overflow-y-auto w-full mx-auto   bg-white">
-
+    <main className="flex-1 h-full max-h-screen overflow-y-auto w-full mx-auto   bg-white">
       <nav className="flex items-center gap-2  h-[46px] 2xl:px-[100px] text-xs  px-[3%] bg-[#e1ebe1] text-gray-500">
-        <Image src={"/icon/home.svg"} alt="Logo" width={18} height={18} />
-        <span className="font-medium text-[var(--desaturated-green)]">Home</span>
+        <Image src={"/icon/home.svg"} width={18} height={18} alt="Logo" />
+        <span className="font-medium text-[var(--desaturated-green)]">
+          Home
+        </span>
         <ChevronRight className="h-4 w-4 font-medium text-[var(--desaturated-green)]" />
-        <span className="font-medium text-[var(--desaturated-green)]">{categoryName}</span>
+        <span className="font-medium text-[var(--desaturated-green)]">
+          {categoryName}
+        </span>
         <ChevronRight className="h-4 w-4" />
         <span className="text-[#7C827D]">The servant is dependent...</span>
       </nav>
 
       <div className="mb-8 2xl:px-[100px] bg-[#eef6eb] flex items-center  h-[68px] px-[3%]">
         <h1 className=" text-base ">
-          <span className="font-semibold text-[var(--desaturated-green)]">Section:</span> {sectionTitle}
+          <span className="font-semibold text-[var(--desaturated-green)]">
+            Section:
+          </span>{" "}
+          {sectionTitle}
         </h1>
       </div>
 
       <div className="space-y-8 flex-1 overflow-y-auto 2xl:px-[100px]   ">
         {duas.map((dua, index) => (
-          <div key={dua.id} className="bg-white rounded-lg -mt-8 px-6 pb-6 border-b border-gray-200 shadow-sm">
+          <div
+            key={`${index}} `}
+            className="bg-white rounded-lg px-6 pb-6 border-b border-gray-200 shadow-sm"
+          >
             <div className="flex items-center gap-3 mb-6">
               <Image
-                src={ "/icon/mark.svg"}
-                alt={dua.title}
+                src={"/icon/mark.svg"}
+                alt={"dua.title"}
                 width={28}
                 height={28}
                 className="rounded-full flex-shrink-0"
               />
-              <h2 className="text-base font-medium text-[var(--desaturated-green)] leading-relaxed"> <span className="">{index + 1}.</span> {dua.title}</h2>
+              <h2 className="text-base font-medium text-[var(--desaturated-green)] leading-relaxed">
+                {" "}
+                <span className="">{index + 1}.</span> { dua.dua_name_en || dua.dua_name_bn}
+              </h2>
             </div>
 
             <div className="mb-6 text-right">
@@ -54,25 +86,32 @@ export default function MainContent({ duas, currentCategory, arabicFontSize, tra
                 style={{ fontSize: `${arabicFontSize}px` }}
                 dir="rtl"
               >
-                {dua.arabicText}
+                {dua.dua_arabic}
               </p>
             </div>
 
             <div className="mb-4">
-              <p className="text-[var(--transliteration-text)] italic leading-relaxed">{dua.transliteration}</p>
+              <p className="text-[var(--transliteration-text)] italic leading-relaxed">
+                {dua.transliteration_en || dua.transliteration_bn}
+              </p>
             </div>
 
             <div className="mb-6">
               <h3 className="font-semibold text-[#282E29] mb-2">Translation</h3>
-              <p className="  text-[#282E29] font-normal leading-relaxed" style={{ fontSize: `${translationFontSize}px` }}>
-                {dua.translation}
+              <p
+                className="  text-[#282E29] font-normal leading-relaxed"
+                style={{ fontSize: `${translationFontSize}px` }}
+              >
+                {dua.translation_en || dua.translation_bn}
               </p>
             </div>
 
             <div className="flex items-center justify-between pt-4 border-t border-gray-100">
               <div>
                 <p className="text-sm text-gray-500 mb-1">Reference</p>
-                <p className="text-sm font-medium text-gray-900">{dua.reference}</p>
+                <p className="text-sm font-medium text-gray-900">
+                  { dua.refference_en || dua.refference_bn}
+                </p>
               </div>
 
               <div className="flex items-center gap-2">
@@ -94,8 +133,5 @@ export default function MainContent({ duas, currentCategory, arabicFontSize, tra
         ))}
       </div>
     </main>
-  )
+  );
 }
-
-
-
