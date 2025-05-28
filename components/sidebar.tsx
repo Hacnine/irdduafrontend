@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Search, ChevronDown, ChevronRight } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -15,6 +15,7 @@ interface SidebarProps {
   currentCategory: string;
   isOpen: boolean;
   onClose: () => void;
+  categoryId?: number;
 }
 
 export default function Sidebar({
@@ -22,10 +23,11 @@ export default function Sidebar({
   currentCategory,
   isOpen,
   onClose,
+  categoryId,
 }: SidebarProps) {
   const router = useRouter();
   const [searchQuery, setSearchQuery] = useState("");
-
+  const catRef = useRef<HTMLDivElement>(null);
   // Initialize expanded/active category from currentCategory
   const [expandedCategories, setExpandedCategories] = useState<number[]>([]);
   const [activeCategoryId, setActiveCategoryId] = useState<number | null>(null);
@@ -36,7 +38,14 @@ export default function Sidebar({
       setExpandedCategories([catId]);
       setActiveCategoryId(catId);
     }
-  }, [currentCategory]);
+    if (categoryId) {
+      toggleCategory(categoryId);
+    }
+    if (catRef.current) {
+      catRef.current.focus();
+      catRef.current.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+  }, [currentCategory, categoryId]);
 
   const toggleCategory = (catId: number) => {
     setExpandedCategories((prev) =>
@@ -100,7 +109,7 @@ export default function Sidebar({
                 key={category.cat_id}
                 className="space-y-2 cursor-pointer"
                 onClick={() => {
-                  toggleCategory(category.cat_id);
+                  // toggleCategory(category.cat_id);
                   const formattedName = category.cat_name_en
                     .toLowerCase()
                     .replace(/\s+/g, "-")
@@ -110,9 +119,9 @@ export default function Sidebar({
 
                   router.replace(`/dua-categories/${formattedName}`, {
                     scroll: false,
-                    shallow: true,
                   });
                 }}
+                ref={catRef}
               >
                 <div className="flex items-center gap-3 p-3">
                   <div className="w-10 h-10 bg-[#e1ebe1] hover:bg-gray-50 transition-colors rounded-[15px] flex items-center justify-center">
@@ -142,33 +151,27 @@ export default function Sidebar({
                 </div>
 
                 {expandedCategories.includes(category.cat_id) && (
-                  <div className="ml-4 space-y-1">
+                  <div className="ml-8 border-l-2 border-dashed border-gray-300 pl-4 space-y-2">
                     {isFetching ? (
-                      <p className="text-sm text-gray-400">Loading...</p>
+                      <p className="text-sm h-screen w-screen flex items-center justify-center text-gray-400">
+                        Loading...
+                      </p>
                     ) : (
-                      subcategories?.map((subcategory, subIndex) => (
-                        <div
-                          key={subcategory.subcat_id}
-                          className="flex items-start gap-3"
-                        >
-                          <div className="flex flex-col items-center pt-2">
-                            <div className="w-3 h-3 border-2 border-gray-300 rounded-full bg-white"></div>
-                            {subIndex < subcategories.length - 1 && (
-                              <div className="w-px h-8 bg-gray-200 mt-1"></div>
-                            )}
-                          </div>
-
+                      subcategories?.map((subcategory) => (
+                        <div className="flex items-center" key={subcategory.subcat_id}>
+                          <div className="w-6 -ml-3 mr-2 -mt-5   border-t-2 border-dashed border-gray-300"></div>
                           <Link
-                            href={`/category/${subcategory.subcat_id}`}
-                            className={`flex-1 px-3 py-2 text-sm rounded-md transition-colors ${
-                              Number(currentCategory) === subcategory.subcat_id
-                                ? "bg-green-50 text-green-700 font-medium"
-                                : "text-gray-600 hover:bg-gray-50"
-                            }`}
-                            onClick={onClose}
-                          >
-                            {subcategory.subcat_name_en}
-                          </Link>
+                          key={subcategory.subcat_id}
+                          href={`/category/${subcategory.subcat_id}`}
+                          className={`block text-sm transition-colors   rounded-md py-2  ${
+                            Number(currentCategory) === subcategory.subcat_id
+                              ? "bg-green-50 text-green-700 font-medium"
+                              : "text-gray-700 hover:bg-gray-50"
+                          }`}
+                          onClick={onClose}
+                        >
+                          {subcategory.subcat_name_en}
+                        </Link>
                         </div>
                       ))
                     )}

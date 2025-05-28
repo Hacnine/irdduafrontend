@@ -27,7 +27,6 @@ duas,
 }: MainContentProps) {
   const { data: subCategoriesData = [], isFetching: categoryDataFetching } =
     useGetSubCategoriesQuery();
-  console.log(duas);
 
   const categoryName = 
   duas[0]?.dua_name_en || 

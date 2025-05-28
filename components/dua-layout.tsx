@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Header from "./header";
 import Sidebar from "./sidebar";
 import MainContent from "./main-content";
@@ -12,17 +12,40 @@ interface DuaLayoutProps {
   categories: Category[];
   duas: Duas[];
   currentCategory: string;
+  categoryId?: number;
 }
 
 export default function DuaLayout({
   categories,
   duas,
   currentCategory,
+  categoryId,
 }: DuaLayoutProps) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [fontSettingsOpen, setFontSettingsOpen] = useState(false);
   const [arabicFontSize, setArabicFontSize] = useState(28);
   const [translationFontSize, setTranslationFontSize] = useState(16);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(min-width: 1024px)");
+
+    const handleChange = (e: MediaQueryListEvent) => {
+      if (e.matches) {
+        setFontSettingsOpen(true);
+      } else {
+        setFontSettingsOpen(false);
+      }
+    };
+
+    // Set initial state based on current screen size
+    if (mediaQuery.matches) {
+      setFontSettingsOpen(true);
+    }
+
+    mediaQuery.addEventListener("change", handleChange);
+
+    return () => mediaQuery.removeEventListener("change", handleChange);
+  }, []);
 
   return (
     <div className="min-h-screen flex bg-gray-50">
@@ -39,6 +62,7 @@ export default function DuaLayout({
             currentCategory={currentCategory}
             isOpen={sidebarOpen}
             onClose={() => setSidebarOpen(false)}
+            categoryId={categoryId}
           />
 
           <MainContent
