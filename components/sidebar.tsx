@@ -159,7 +159,7 @@ export default function Sidebar({
                     ) : (
                       subcategories?.map((subcategory) => (
                         <div className="flex items-center" key={subcategory.subcat_id}>
-                          <div className="w-6 -ml-3 mr-2 -mt-5   border-t-2 border-dashed border-gray-300"></div>
+                          <div className="w-6 -ml-3 mr-2 -mt-3   border-t-2 border-dashed border-gray-300"></div>
                           <Link
                           key={subcategory.subcat_id}
                           href={`/category/${subcategory.subcat_id}`}
